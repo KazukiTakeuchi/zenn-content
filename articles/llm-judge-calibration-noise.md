@@ -3,7 +3,7 @@ title: "一致率90%でもkappaは0 — LLMジャッジは校正しないとノ�
 emoji: "⚖️"
 type: "tech"
 topics: ["ai", "llm", "エージェント", "評価", "evals"]
-published: false
+published: true
 ---
 
 ![全部passと答えるジャッジ：一致率90%でもkappaは0](/images/benchmark-evals/art2-kappa.png)
@@ -72,4 +72,4 @@ kappaは「実際に一致した割合（観測一致率）」から「偶然で
 
 まず第1章から第3章まで（約21,000字）は無料で公開しているので、評価全体の設計図はそちらで確認できる。ジャッジをすでに運用していて、自分の一致率が上の例のどちら側にあるか分からない状態であれば、第6章と付録Bが直接の対象になる。
 
-<!-- ここに本へのリンクカードを設置 -->
+https://zenn.dev/kazu1/books/benchmark-evals

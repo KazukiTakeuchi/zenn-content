@@ -1,0 +1,21 @@
+title: "ベンチマークを信じるな — AIエージェント評価の実務"
+summary: "公開ベンチマークのスコアは、あなたのエージェントの品質を教えてくれない。本番の失敗から評価セットを作り、軌跡を採点し、LLMジャッジを校正し、CIと本番で回し続ける。ツール選定・セキュリティ・コスト設計まで、評価の実務判断をまとめた一冊。"
+topics: ["ai", "llm", "エージェント", "評価", "evals"]
+published: false
+price: 2000
+chapters:
+  - why-demos-fail
+  - eval-design-blueprint
+  - building-eval-datasets
+  - trajectory-evaluation
+  - tool-use-multiturn-eval
+  - llm-judge-calibration
+  - eval-driven-ci-gates
+  - eval-platform-and-tools
+  - long-horizon-multiagent
+  - security-red-teaming
+  - production-eval-and-cost
+  - eval-failure-patterns
+  - appendix-templates-rubrics
+  - appendix-calibration-sheet
+  - appendix-tool-matrix

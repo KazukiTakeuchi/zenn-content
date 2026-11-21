@@ -3,7 +3,7 @@ title: "1回85%でも4回連続成功は52% — pass@kでは本番の信頼性�
 emoji: "🎲"
 type: "tech"
 topics: ["ai", "llm", "エージェント", "評価", "evals"]
-published: false
+published: true
 ---
 
 ![pass^kとpass@kの乖離：1回85%のエージェントを4回回すと](/images/benchmark-evals/art3-passk-curves.png)
@@ -74,4 +74,4 @@ pass^kで数え直すこと自体は、今日からでもできる。ただし�
 
 これらを一つの流れとして扱ったのが、Zenn Book『ベンチマークを信じるな — AIエージェント評価の実務』（¥2,000）である。第1章から第3章まで（約21,000字）は無料で公開しているので、評価セットの設計までは無料分で確認できる。pass^kの報告形式を自分の評価に持ち込む際の物差しとして使える構成にしてある。
 
-<!-- ここに本へのリンクカードを設置 -->
+https://zenn.dev/kazu1/books/benchmark-evals

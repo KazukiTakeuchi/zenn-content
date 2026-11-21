@@ -3,7 +3,7 @@ title: "SWE-bench『80.9%』を割り引いて読む — 公開ベンチマー�
 emoji: "🔍"
 type: "tech"
 topics: ["ai", "llm", "エージェント", "評価", "evals"]
-published: false
+published: true
 ---
 
 ![公開スコアを割り引く3要素：実行ハーネスの差、訓練データ汚染、検証者エラー](/images/benchmark-evals/art1-discounts.png)
@@ -80,4 +80,4 @@ OpenAIが監査したのは全500タスクではない。モデルが繰り返�
 
 まず判断材料として、第1章から第3章まで（約21,000字）は無料で公開している。ベンチマークの前提がどう崩れたか、評価の語彙と全体像、評価セット構築の基本までが1つのまとまりとして読める。続きが必要かどうかは、無料分を読んでから決めればよい。
 
-<!-- ここに本へのリンクカードを設置 -->
+https://zenn.dev/kazu1/books/benchmark-evals

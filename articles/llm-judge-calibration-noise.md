@@ -1,10 +1,12 @@
 ---
-title: "LLMジャッジは校正しないとノイズ"
+title: "一致率90%でもkappaは0 — LLMジャッジは校正しないとノイズ"
 emoji: "⚖️"
 type: "tech"
 topics: ["ai", "llm", "エージェント", "評価", "evals"]
 published: false
 ---
+
+![全部passと答えるジャッジ：一致率90%でもkappaは0](/images/benchmark-evals/art2-kappa.png)
 
 LLM-as-a-Judgeの導入は簡単である。評価対象の出力と採点基準をプロンプトに書き、別のモデルに渡せば、それらしいスコアが返ってくる。問題は、そのスコアを信じてよいかどうかを、導入した側がたいてい確認していないことだ。
 

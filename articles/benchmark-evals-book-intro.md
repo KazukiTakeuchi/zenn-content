@@ -1,10 +1,12 @@
 ---
-title: "『ベンチマークを信じるな』を書いた — AIエージェント評価の実務"
+title: "Zenn Book『ベンチマークを信じるな — AIエージェント評価の実務』を公開しました"
 emoji: "📖"
 type: "tech"
 topics: ["ai", "llm", "エージェント", "評価", "evals"]
 published: false
 ---
+
+![本の表紙『ベンチマークを信じるな — AIエージェント評価の実務』](/images/benchmark-evals/book-cover.png)
 
 Zenn Book『ベンチマークを信じるな — AIエージェント評価の実務』を書いた。この記事はその紹介である。
 

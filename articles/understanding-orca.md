@@ -351,19 +351,3 @@ Orca本体の方も、orchestrationのような実験的な機能がどう落ち
 とりあえず、読み取り中心の担当を1体作って、普段の見回りを任せてみるところからでいいと思います。
 
 （蛇足ですが、Full accessのまま他人からも呼べる形で置くのはやめておいた方がいいと思います）
-
-## 参考
-
-- Orca公式サイト: https://orca.dev
-- Orca公式「Bots」紹介ページ: https://orca.dev/bots
-- Orca公式ドキュメント「Bots」quickstart: https://orca.dev/docs/bots
-- Orca公式ドキュメント「Bot use cases」: https://orca.dev/docs/bots/use-cases
-- Orca公式ドキュメント「Bots Security」: https://orca.dev/docs/bots/security
-- Orca公式 changelog: https://api.onorca.dev/changelog
-- i-Style社の実践記事「Orca Botsとは？できること・使い方と、入れる前に決める3つ」: https://i-styleinc.com/blog/orca-bots-setup-checkpoints
-- OpenAI「Introducing dots」: https://openai.com/index/introducing-dots/
-- OpenAI「Getting started with your dot」公式ヘルプ: https://help.openai.com/en/articles/20001530-getting-started-with-your-dot
-- OpenAI「Pricing and billing for dots in ChatGPT Enterprise」公式ヘルプ: https://help.openai.com/en/articles/20001641-pricing-and-billing-for-dots-in-chatgpt-enterprise
-- Anthropic「Claude Duet」公式記事: https://claude.com/resources/articles/claude-duet
-- Devin Bots公式ドキュメント: https://docs.devin.ai/work-with-devin/bots
-- OpenClaw公式ドキュメント: https://docs.openclaw.ai

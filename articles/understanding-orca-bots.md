@@ -1,5 +1,5 @@
 ---
-title: "Claude Codeを「担当」にするという発想 — Orca Botsを理解する"
+title: "Orca Botsを理解する — Claude Codeを「担当」にするという発想"
 emoji: "🐋"
 type: "tech"
 topics: ["orca", "claudecode", "codex", "aiエージェント", "chatgpt"]

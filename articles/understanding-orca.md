@@ -1,5 +1,5 @@
 ---
-title: "Orcaを理解する — Claude Codeの並列実行から「担当」を持たせるまで"
+title: "Orcaを理解する — Claude Codeの並列実行から担当を持たせる"
 emoji: "🐋"
 type: "tech"
 topics: ["orca", "claudecode", "codex", "aiエージェント", "chatgpt"]

@@ -1,5 +1,5 @@
 ---
-title: "Orcaを理解する — Claude Codeの並列実行から担当を持たせる"
+title: "Orcaを理解する — Claude Codeの並列実行から「担当」を持たせるまで"
 emoji: "🐋"
 type: "tech"
 topics: ["orca", "claudecode", "codex", "aiエージェント", "chatgpt"]
@@ -29,6 +29,7 @@ Claude Codeを並列で回すようになってから、ターミナルのタブ
 3つ目は、セッションが使い捨てなことです。前提も経緯も、セッションを閉じれば残りません。
 
 「このリポジトリではCIが落ちたらまずこれを見る」という前提は、毎回ゼロから説明することになります。定型の見回りも、起動するのは人間なので、忙しい日には飛びます。
+
 Orcaは、このうち主に1つ目と2つ目を引き受ける道具です。3つ目への答えが、Botsになります。
 
 ## Orcaという置き場
@@ -42,7 +43,17 @@ Orcaは、複数のAIコーディングエージェントを並べて動かす�
 
 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、OpenCodeなど、ターミナルで動くCLIエージェントならだいたい使えます。契約を乗り換える話ではなく、今の契約の上に置く道具です。
 
-タスクごとにworktreeが分かれるので、並列で回しても作業はぶつかりません。各セッションの状態はIDEの中で一覧できて、誰が何をしているか追えます。利用枠の確認（Usage & Accounts）もあり、ClaudeやCodexの上限をどれだけ使ったかと、リセット時刻が見られます。並列で回すと枠の減り方も速いので、地味に助かります。もう1つ、orchestrationという仕組みもあります。coordinator役のエージェントが仕事を分割してworkerに割り振り、各workerが自分のworktreeで動く、という使い方です。
+タスクごとにworktreeが分かれるので、並列で回しても作業はぶつかりません。各セッションの状態はIDEの中で一覧できて、誰が何をしているか追えます。
+
+![worktreeの作成ダイアログ。プロジェクトと実行マシン、使うエージェントを選ぶ](/images/orca/orca-create-worktree.jpg)
+*worktreeの作成画面。プロジェクト、実行マシン、エージェントを選んで作る（出典：Orca公式GitHubリポジトリ）*
+
+利用枠の確認（Usage & Accounts）もあり、ClaudeやCodexの上限をどれだけ使ったかと、リセット時刻が見られます。並列で回すと枠の減り方も速いので、地味に助かります。
+
+![OrcaのIDE全体。左にプロジェクトとworktreeの一覧、中央にcoordinatorとworkerのやり取り、下部に各エージェントの利用枠が並ぶ](/images/orca/orca-ide-overview.jpg)
+*Orcaの画面全体。worktreeの一覧、エージェント同士のやり取り、利用枠が1画面に並ぶ（出典：Orca公式GitHubリポジトリ）*
+
+もう1つ、orchestrationという仕組みもあります。coordinator役のエージェントが仕事を分割してworkerに割り振り、各workerが自分のworktreeで動く、という使い方です。
 
 `orca orchestration` というCLIがあり、エージェント自身がそのループを回せます。ただ、まだ実験的な位置づけの機能で、使い方のパターンはこれから固まっていく段階です。
 
@@ -91,6 +102,9 @@ flowchart LR
 
 「このボットはCI担当。CIが落ちたら一次調査をして、原因の当たりを付けて報告する」
 
+![ボットのチャットとHome。右側にNeeds you、進行中の仕事、Automationsが並ぶ](/images/orca/orca-bot-home.webp)
+*ボットの画面。左がチャット、右のHomeに判断待ち（Needs you）と進行中の仕事、自動化が並ぶ（出典：Orca公式ドキュメント）*
+
 ### チャットと何が違うのか
 
 Claude Codeのセッションは、人が話しかけたときに動き始めます。記憶はその会話の中だけで、セッションが終われば基本リセットです。
@@ -127,6 +141,9 @@ Orca Botsは、担当と記憶を持ったまま存在し続け、スケジュ�
 GitHubは、IssueやPRでのメンションのほか、CIの失敗やレビュー依頼でも起動できます。SlackはチャンネルでのメンションやDMで起動し、ボット専用のSlack appが作られます。スケジュールはhourly / daily / weekdays / weekly / cron / RRULEで指定できます。
 
 他にもGmail、カレンダー、Webhook、Linear、携帯電話のアプリといった入口があります。
+
+![ボットへの仕事の入口。Slackのメンション、Linearのラベル、GitHubのCI失敗、スケジュールが並ぶ](/images/orca/orca-bot-triggers.webp)
+*仕事の入口の例。Slack、Linear、GitHub、スケジュール（出典：Orca公式ドキュメント）*
 
 ```mermaid
 flowchart TD
@@ -226,6 +243,9 @@ LinearのIssueトリアージは、新しいIssueの再現手順の有無を確�
 ### 複数置く場合
 
 ボットは複数置くことが公式の前提で、ボットごとにフォルダが分かれ、記憶・自動化・使うエージェントを別々に持てます。連携はgroup chatの中だけです。
+
+![サイドバーのBotsに複数のボットが並び、右側でNeeds youの質問に答える画面](/images/orca/orca-bots-sidebar.jpg)
+*サイドバーに複数のボットが並ぶ。右はボットからの判断待ちに答える画面（出典：Orca公式GitHubリポジトリ）*
 
 v1.4.269で、他のメンバーにメンションしてターンを渡せるようになりました。公式デモ「Launch crew」では、Release・Review・Docsの3ボットが分担していました。
 

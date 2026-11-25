@@ -1,8 +1,8 @@
 ---
-title: "Orcaを理解する — Claude Codeの並列実行から「担当」を持たせるまで"
+title: "Claude Codeの並列実行で管理が崩れる人へ — セッションに「担当」を持たせるOrcaとBots"
 emoji: "🐋"
 type: "tech"
-topics: ["orca", "claudecode", "codex", "aiエージェント", "chatgpt"]
+topics: ["claudecode", "orca", "aiエージェント", "claude", "codex"]
 published: true
 ---
 

@@ -14,6 +14,8 @@ Claude Codeを並列で回すようになってから、ターミナルのタブ
 
 その「並列で回す側」の道具として、Orcaという開発環境があります。Stably AIが作っているオープンソース（MIT）で、2026年3月公開、GitHubのスターは12万を超えています。
 
+先に言っておくと、新機能「Bots」には、名前から受ける印象とだいぶ違うところが3つあります。ボットはクラウドで常駐せず、自分のPCが寝れば止まります。記憶はサービスのデータベースではなく、手元のMarkdownファイルに残ります。そして権限の初期設定は、確認なしで実行するFull accessです。
+
 この記事では、Orca本体を「並列エージェントの置き場」として説明したあと、その置き場に「担当」を持たせる新機能「Bots」（2026年11月19日公開）を取り上げます。
 
 ※名前の似た別製品「OrcaBot」の話はしません。後ろの方で少しだけ触れます。
@@ -320,14 +322,8 @@ Orca Botsの位置づけは、他の常駐エージェントと並べると見�
 |---|---|---|---|---|
 | Orca Bots | 自分のPC | SOUL.md / MEMORY.md（手元のファイル） | Bots専用の料金は公式に見当たらない（今のエージェント契約の枠を使う） | PCが起きている間だけ |
 | dots（OpenAI） | OpenAIのクラウド（専用のクラウドコンピュータ） | ChatGPTのメモリと共有。サービスの中 | Pro（月100ドル〜）などに1体込み。Enterpriseは別料金 | PCを閉じても24時間 |
-| Claude Duet | Anthropicのクラウド | Claudeのメモリ等を引き継ぐ。サービスの中 | Pro / Max / Ultraに含まれる。利用枠はClaude全体と共有 | PCを閉じても回る |
-| Perplexity Teammates | Perplexityのクラウド（1体ごとに隔離されたコンピュータ） | 会話をまたいで保持。サービスの中 | Maxのみ。Computerと同じクレジットを消費 | 常駐する |
 | Devin Bots | Cognitionのクラウド | Devinの中（InstructionsとMemory） | 専用課金（Max 200ドル/月〜。Teamsは80ドル/月の共有プール） | 24時間 |
-| ChatGPT Tasks | OpenAIのクラウド | ChatGPTのMemory（ファイルではない） | ChatGPTプランの枠。タスク数に上限（Free / Goで各3件、Plusで5件） | PCを閉じても回る |
-| ChatGPT GPTs | OpenAIのクラウド | なし（毎回まっさら） | プランに含まれる | 常駐しない |
 | OpenClaw | 自分のマシン／サーバ | SOUL.md / MEMORY.md等（手元のファイル） | 無料（MIT）。払うのはモデル費用のみ | マシンが起きていれば |
-| OrcaBot（別製品） | ベンダーのクラウドVM | 作業ファイルは残る。記憶の仕組みは公式に明記なし | 公式に明記なし。APIキーは自前 | タブを閉じても回る |
-| Copilot coding agent | GitHubのクラウド | Copilot Memory（サービスの中。ファイルではない） | Copilotプラン＋計算資源の月次枠とAI credits | 常駐しない（Actionsのセッションは最大59分） |
 
 （料金と仕様は、2026年11月22日に各社の公式ページで確認したものです）
 
